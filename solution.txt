@@ -1,0 +1,10 @@
+Rock
+Paper
+Scissors
+
+Paper > Rock
+Paper < Scissors
+Rock > Scissors
+Rock < Paper
+Scissors > Paper
+Scissors < Rock
