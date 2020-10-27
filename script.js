@@ -1,9 +1,10 @@
 let playerSelection;
 let computerSelection;
+let a = 0;
+let b = 0;
 
 playerSelection = prompt("Make your choice");
 playerSelection = playerSelection.toUpperCase();
-
 console.log(playerSelection);
 
 computerSelection = computerPlay();
@@ -22,6 +23,7 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     switch(playerSelection) {
+        
         case "ROCK":
             if (computerSelection == "SCISSORS") {
                 alert("You won")
@@ -31,6 +33,7 @@ function playRound(playerSelection, computerSelection) {
                 alert("Draw")
             }
             break;
+
         case "PAPER":
             if (computerSelection == "ROCK") {
                 alert("You won")
@@ -40,6 +43,7 @@ function playRound(playerSelection, computerSelection) {
                 alert("Draw")
             }
             break;
+
         case "SCISSORS": 
             if (computerSelection == "PAPER") {
                 alert("You won")
@@ -49,10 +53,11 @@ function playRound(playerSelection, computerSelection) {
                 alert("Draw")
             }
             break;
+        
         default:
             alert("Make a right choice")
     }
 }    
 
 
-playRound(playerSelection, computerSelection)         
+playRound(playerSelection, computerSelection);
