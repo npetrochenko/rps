@@ -1,3 +1,7 @@
-Rock, Papers, Scissors game as part of Web Development course on The Odin Project
+*Rock | Papers | Scissors*
+======================
 
-TODO: Counters for both the player and computer, and also need to limit amount of games; 
+Made as a part of WebDev curriculum at _The Odin Project_
+
+TODO: 
+ * limit amount of games 
