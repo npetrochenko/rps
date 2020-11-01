@@ -69,11 +69,20 @@ body {
 
 .counter {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 70px;
+    align-self: center;
+}
+
+.player-counter,
+.computer-counter {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 120px;
     height: 70px;
-    align-self: center;
     border-left: 1px solid black;
     border-right: 1px solid black;
     text-align: center;
@@ -106,4 +115,14 @@ body {
     height: 100%;
     color: white;
     font-size: 100px;
+}
+
+i {
+    transition: transform ease-out .5s;
+    transition: color ease-out .8s;
+}
+
+.active {
+    transform: scale(1.2);
+    color: rgb(228, 37, 37);
 }

@@ -1,5 +1,5 @@
 let playerSelection, computerSelection;
-let counter = 0;
+let pcounter = 0, ccounter = 0;
 
 function randomComputerChoice() {
     random = Math.random()
@@ -30,7 +30,10 @@ scissorsBtn.addEventListener('click', function() {
          computerChoice.setAttribute('class', 'fas fa-hand-scissors');
      };
      playRound(playerSelection, computerSelection);
-     console.log(counter);
+     scissorsBtn.classList.add('active');
+     scissorsBtn.addEventListener('transitionend', function() {
+         scissorsBtn.classList.remove('active');
+     })
 });
 rockBtn.addEventListener('click', function() {
     playerSelection = 'ROCK';
@@ -44,7 +47,10 @@ rockBtn.addEventListener('click', function() {
          computerChoice.setAttribute('class', 'fas fa-hand-scissors');
      };
      playRound(playerSelection, computerSelection);
-     console.log(counter);
+     rockBtn.classList.add('active');
+     rockBtn.addEventListener('transitionend', function() {
+         rockBtn.classList.remove('active');
+     })
 });
 paperBtn.addEventListener('click', function() {
     playerSelection = 'PAPER';
@@ -58,31 +64,42 @@ paperBtn.addEventListener('click', function() {
          computerChoice.setAttribute('class', 'fas fa-hand-scissors');
      };
      playRound(playerSelection, computerSelection);
-     console.log(counter);
+     paperBtn.classList.add('active');
+     paperBtn.addEventListener('transitionend', function() {
+         paperBtn.classList.remove('active');
+     })
 });
 
-const menuCounter = document.querySelector('.counter');
-menuCounter.textContent = 0;
-window.addEventListener('click', function() {menuCounter.textContent = counter});
+const playerCounter = document.querySelector('.player-counter');
+const computerCounter = document.querySelector('.computer-counter');
+
+playerCounter.textContent = 0;
+computerCounter.textContent = 0;
+window.addEventListener('click', function() {playerCounter.textContent = pcounter});
+window.addEventListener('click', function() {computerCounter.textContent = ccounter});
+
+// const menuCounter = document.querySelector('.counter');
+// menuCounter.textContent = 0;
+// window.addEventListener('click', function() {menuCounter.textContent = counter});
 
 function playRound(p, c) {
     switch(p) {
         case 'ROCK':
             console.log('p is rock');
-            if (c == 'PAPER') {counter--; console.log('c is paper');}
-            else if (c == 'SCISSORS') {counter++; console.log('c is scissors');}
+            if (c == 'PAPER') {ccounter++; console.log('c is paper');}
+            else if (c == 'SCISSORS') {pcounter++; console.log('c is scissors');}
             else {console.log('c is rock')}
             break;
         case 'PAPER':
             console.log('p is paper');
-            if (c == 'SCISSORS') {counter--; console.log('c is scissors');}
-            else if (c == 'ROCK') {counter++; console.log('c is rock');}
+            if (c == 'SCISSORS') {ccounter++; console.log('c is scissors');}
+            else if (c == 'ROCK') {pcounter++; console.log('c is rock');}
             else {console.log('c is paper')}
             break;
         case 'SCISSORS': 
             console.log('p is scissors');
-            if (c == 'ROCK') {counter--; console.log('c is rock');}
-            else if (c == 'PAPER') {counter++; console.log('c is paper');}
+            if (c == 'ROCK') {ccounter++; console.log('c is rock');}
+            else if (c == 'PAPER') {pcounter++; console.log('c is paper');}
             else {console.log('c is scissors')}
             break;
     };
